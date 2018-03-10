@@ -1,11 +1,87 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>Blank App</title>
-    </head>
-    <body>
-        <script type="text/javascript" src="cordova.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Blank App</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <div data-role="page">
+
+        <div data-role="header">
+            <h1>myWallet</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <img id="logo" src="img/logo.png">
+            <button class="ui-btn ui-corner-all" onclick="location.href='index.html#add'">Dodaj Wydatek</button>
+            <button class="ui-btn ui-corner-all">Analiza Wydatków</button>
+            <br>
+            <button class="ui-btn ui-corner-all" data-icon="info">O Aplikacji</button>
+
+
+        </div>
+
+        <div data-role="footer" id="footer">
+            <h4>Page Footer</h4>
+        </div>
+    </div>
+    <!-- /End of main page -->
+
+    <div data-role="page" id="add">
+
+        <div data-role="header">
+            <h1>Dodaj wydatek</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <label for="kwota">
+                <b>Kwota (PLN): </b>
+            </label>
+            <input type="number" min="0.00" step="0.01">
+            <br>
+            <fieldset data-role="controlgroup">
+                <legend>
+                    <b>Kategoria: </b>
+                </legend>
+                <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+                <label for="radio-choice-1">Rozrywka</label>
+
+                <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2" />
+                <label for="radio-choice-2">Jedzenie</label>
+
+                <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3" />
+                <label for="radio-choice-3">Zdrowie</label>
+
+                <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4" />
+                <label for="radio-choice-4">Mieszkanie</label>
+
+                <input type="radio" name="radio-choice-1" id="radio-choice-5" value="choice-5" />
+                <label for="radio-choice-5">Samochód</label>
+
+                <input type="radio" name="radio-choice-1" id="radio-choice-6" value="choice-6" />
+                <label for="radio-choice-6">Edukacja</label>
+            </fieldset>
+            <br>
+            <br>
+            <button type="submit" class="ui-btn ui-corner-all">Zapisz!</button>
+
+        </div>
+
+        <div data-role="footer" id="footer">
+            <h4>Page Footer</h4>
+        </div>
+    </div>
+    <!-- /End of Add Page -->
+
+    
+</body>
+
 </html>
