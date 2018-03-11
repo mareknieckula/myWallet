@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 
 <body>
     <script type="text/javascript" src="cordova.js"></script>
-    <div data-role="page">
+    <div data-role="page" id="homePage">
 
         <div data-role="header">
             <h1>myWallet</h1>
@@ -24,13 +25,17 @@
             <button class="ui-btn ui-corner-all" onclick="location.href='index.html#add'">Dodaj Wydatek</button>
             <button class="ui-btn ui-corner-all" onclick="location.href='index.html#analyze'">Analiza Wydatków</button>
             <br>
-            <button class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">O Aplikacji</button>
+            <button class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left" onclick="showInfo()">O Aplikacji</button>
 
 
         </div>
 
         <div data-role="footer" id="footer">
-            <h4>Page Footer</h4>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Home</a>
+                <a onclick="quitApp()" data-role="button" data-icon="delete">Zakończ</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+            </div>
         </div>
     </div>
     <!-- /End of main page -->
@@ -45,7 +50,7 @@
             <label for="kwota">
                 <b>Kwota (PLN): </b>
             </label>
-            <input type="number" min="0.00" step="0.01">
+            <input id="amount" type="number" min="0.00" step="0.01">
             <br>
             <fieldset data-role="controlgroup">
                 <legend>
@@ -71,12 +76,16 @@
             </fieldset>
             <br>
             <br>
-            <button type="submit" class="ui-btn ui-corner-all">Zapisz!</button>
+            <button type="submit" class="ui-btn ui-corner-all" onclick="save()">Zapisz!</button>
 
         </div>
 
         <div data-role="footer" id="footer">
-            <h4>Page Footer</h4>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Home</a>
+                <a onclick="quitApp()" data-role="button" data-icon="delete">Zakończ</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+            </div>
         </div>
     </div>
     <!-- /End of Add Page -->
@@ -112,11 +121,15 @@
                 <option value="edukacja">Edukacja</option>
             </select>
             <br>
-            <button class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-left">Pokaż!</button>
+            <button class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-left" onclick="getReport()">Pokaż Raport!</button>
         </div>
 
         <div data-role="footer" id="footer">
-            <h4>Page Footer</h4>
+            <div data-role="controlgroup" data-type="horizontal">
+                <a onclick="location.href='index.html#homePage'" data-role="button" data-icon="home">Home</a>
+                <a onclick="quitApp()" data-role="button" data-icon="delete">Zakończ</a>
+                <a onclick="window.history.back()" data-role="button" data-icon="back">Wstecz</a>
+            </div>
         </div>
     </div>
     <!-- /End of analyze page -->
