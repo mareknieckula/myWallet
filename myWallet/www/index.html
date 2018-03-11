@@ -22,9 +22,9 @@
         <div role="main" class="ui-content">
             <img id="logo" src="img/logo.png">
             <button class="ui-btn ui-corner-all" onclick="location.href='index.html#add'">Dodaj Wydatek</button>
-            <button class="ui-btn ui-corner-all">Analiza Wydatków</button>
+            <button class="ui-btn ui-corner-all" onclick="location.href='index.html#analyze'">Analiza Wydatków</button>
             <br>
-            <button class="ui-btn ui-corner-all" data-icon="info">O Aplikacji</button>
+            <button class="ui-btn ui-corner-all ui-icon-info ui-btn-icon-left">O Aplikacji</button>
 
 
         </div>
@@ -81,7 +81,45 @@
     </div>
     <!-- /End of Add Page -->
 
-    
+    <div data-role="page" id="analyze">
+
+        <div data-role="header">
+            <h1>Analiza Wydatków</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <b>Od dnia:</b>
+            <input id="date" type="date">
+            <b>Do dnia:</b>
+            <input id="date2" type="date">
+            <label for="select-choice-a" class="select">
+                <b>Kategoria:</b>
+            </label>
+            <select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+
+                <option>Wybierz kategorię:</option>
+
+                <option value="rozrywka">Rozrywka</option>
+
+                <option value="jedzenie">Jedzenie</option>
+
+                <option value="zdrowie">Zdrowie</option>
+
+                <option value="mieszkanie">Mieszkanie</option>
+
+                <option value="samochod">Samochód</option>
+
+                <option value="edukacja">Edukacja</option>
+            </select>
+            <br>
+            <button class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-left">Pokaż!</button>
+        </div>
+
+        <div data-role="footer" id="footer">
+            <h4>Page Footer</h4>
+        </div>
+    </div>
+    <!-- /End of analyze page -->
 </body>
 
 </html>
